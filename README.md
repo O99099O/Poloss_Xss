@@ -1,169 +1,147 @@
 
 ---
 
-Poloss XSS v3.2 — Advanced XSS Scanner
+# **Poloss XSS Scanner v3.2**
 
-<img src="assets/screenshot.png" width="800">
----
+### **Next-Generation Advanced XSS Detection Engine**
 
-✨ Fitur Utama (V3.2 Upgrade)
+**BY POLOSS**
 
-Advanced parameter mining terlengkap
-(URL, form, header, cookie, JSON, file upload)
-
-Smart reflection context detector (HTML/JS/URL/Attribute)
-
-Ultra-rich payload database 2000+ payload
-
-Payload mutation engine (context-aware + auto WAF bypass)
-
-DOM XSS Analyzer (full sink detection)
-
-Blind XSS Engine (callback + auto data exfil)
-
-CSP bypass payload set
-
-Mutation XSS detector
-
-Prototype pollution payload injector
-
-WAF detection (Cloudflare, AWS WAF, ModSecurity, F5, dll)
-
-Polyglot payload support
-
-No-WAF mode
-
-Automatic JSON report generator
-
-Multi-threaded executor (ThreadPoolExecutor)
-
-Real request execution (bukan simulasi)
-
-Platform detection (Termux, WSL, Kali, Linux, macOS)
-
-
+<p align="center">
+  <img src="assets/screenshot.png" width="820">
+</p>
 
 ---
 
-📦 Instalasi
+## **⚡ Highlight Fitur v3.2**
 
-git clone https://github.com/O99099O/Poloss_Xss -b O99099O-Update-V3.2
+* Engine parameter mining **tingkat lanjut** (URL, Form, Header, Cookie, JSON, File Upload)
+* **Smart Context Analyzer** (HTML / JS / Attribute / URL / DOM)
+* Database payload **> 2000+ payload aktif**
+* Mutation engine (auto-bypass + auto-encode)
+* **DOM XSS Full Sink Scanner**
+* **Blind XSS Engine + Auto Callback Exfil**
+* WAF detection (Cloudflare, AWS, ModSecurity, F5, Sucuri, dsb)
+* Polyglot payload system
+* Multi-thread turbo executor
+* Real HTTP Injection (tanpa dummy, tanpa simulasi)
+* Auto JSON report & log file
+* Platform autodetect (WSL, Termux, Kali, Linux, macOS)
+
+---
+
+## **📥 Instalasi**
+
+```bash
+git clone -b O99099O-Update-V3.2 https://github.com/O99099O/Poloss_Xss
 cd Poloss_Xss
 pip install -r requirements.txt
+```
 
-requirements.txt:
+**requirements.txt**
 
+```
 requests
 beautifulsoup4
 colorama
 urllib3
 lxml
-
-
----
-
-🚀 Cara Menjalankan
-
-Scan Komprehensif
-
-python3 "Xss_main V3.2.py" -u http://target.com
-
-DOM Focus Mode
-
-python3 "Xss_main V3.2.py" -u http://target.com --mode dom
-
-Fast Scan (Cepat)
-
-python3 "Xss_main V3.2.py" -u http://target.com --mode fast
-
-Blind XSS Mode
-
-python3 "Xss_main V3.2.py" -u http://target.com --blind-callback http://your-callback.net
-
-Skip WAF Detection
-
-python3 "Xss_main V3.2.py" -u http://target.com --no-waf
-
-Custom Header
-
-python3 "Xss_main V3.2.py" -u http://target.com -H "Cookie:abc; User-Agent:Poloss"
-
-Custom Threads
-
-python3 "Xss_main V3.2.py" -u http://target.com --threads 20
-
+```
 
 ---
 
-📊 Output Laporan
+## **🚀 Menjalankan Scanner**
 
-Setiap scan menghasilkan folder berisi:
+### **Full Scan (default)**
 
-xss_scan_YYYYMMDD_HHMMSS.log
-xss_report_XXXXXXXX.json
+```bash
+python3 "Xss_main V3.2.py" -u https://target.com
+```
 
-Isi laporan:
+### **Mode DOM**
 
-Statistik scan
+```bash
+python3 "Xss_main V3.2.py" -u https://target.com --mode dom
+```
 
-Parameter ditemukan
+### **Fast Scan**
 
-Payload yang dipicu
+```bash
+python3 "Xss_main V3.2.py" -u https://target.com --mode fast
+```
 
-Bypass payload
+### **Blind XSS**
 
-WAF detection
+```bash
+python3 "Xss_main V3.2.py" -u https://target.com --blind-callback https://your-callback.net
+```
 
-DOM sink result
+### **Custom Headers**
 
-Blind XSS hit
+```bash
+python3 "Xss_main V3.2.py" -u https://target.com -H "Cookie:abc; User-Agent:POLOSS"
+```
 
-Exploit example lengkap
+### **Boost Thread**
 
-
-
----
-
-🧠 Mode Scanning (V3.2)
-
-Mode	Deskripsi
-
-fast	Scan cepat (URL + form)
-dom	Fokus DOM & client-side sink
-blind	Blind XSS full callback
-comprehensive	Semua parameter + payload lengkap (default)
-
-
+```bash
+python3 "Xss_main V3.2.py" -u https://target.com --threads 20
+```
 
 ---
 
-📡 Fitur Tambahan
+## **📊 Output Scan**
 
-Auto crawling internal link
+Scanner menghasilkan:
 
-Payload generator cerdas berbasis konteks
+```
+xss_scan_XXXX.log
+xss_report_XXXX.json
+```
 
-Auto verification untuk menekan false positive
+Berisi:
 
-Realistic request injection (tidak ada dummy/simulasi)
-
-Auto platform detection (Termux/WSL/Kali)
-
-
-
----
-
-🔒 Catatan Legal
-
-Gunakan hanya untuk pengujian yang memiliki izin resmi.
-Segala penyalahgunaan berada di luar tanggung jawab pembuat.
-
+* Parameter ditemukan
+* Payload yang dieksekusi
+* Payload yang bypass
+* WAF detection
+* DOM Sink list
+* Blind hit
+* Full exploit detail
 
 ---
 
-🖋️ Watermark
+## **🧠 Mode Scan**
 
-BY POLOSS
+| Mode              | Fungsi                          |
+| ----------------- | ------------------------------- |
+| **fast**          | Cepat, fokus URL + Form         |
+| **dom**           | Fokus DOM sink                  |
+| **blind**         | Callback Blind XSS              |
+| **comprehensive** | Semua parameter + payload penuh |
 
+---
+
+## **📡 Core Teknologi**
+
+* Context-aware payload routing
+* Adaptive mutation engine
+* Multi-layer WAF bypass
+* Real-time reflection tester
+* Polyglot compiler injection
+* DOM sink intelligence module
+
+---
+
+## **⚠️ Legal Notice**
+
+Gunakan hanya pada target **legal & berizin**.
+Semua risiko penyalahgunaan berada di tangan pengguna.
+
+---
+
+## **🖋️ Watermark**
+
+**BY POLOSS**
 
 ---
