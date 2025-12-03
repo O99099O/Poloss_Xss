@@ -1,117 +1,169 @@
-# **Poloss XSS v2 — Advanced XSS Scanner**
 
-**White Hat Cyber International Grade | BY POLOSS**
+---
+
+Poloss XSS v3.2 — Advanced XSS Scanner
 
 <img src="assets/screenshot.png" width="800">
+---
 
-## **✨ Fitur Utama**
+✨ Fitur Utama (V3.2 Upgrade)
 
-* Advanced parameter mining (URL, form, header, cookie, JSON, file)
-* Smart reflection context detector
-* Payload mutation engine (context-aware + WAF bypass)
-* Polyglot payloads
-* DOM XSS analyzer
-* Blind XSS support (callback)
-* Concurrency engine (ThreadPoolExecutor)
-* WAF detection (Cloudflare, AWS WAF, ModSecurity, dll)
-* Automatic JSON report generator
-* Real request execution (bukan simulasi)
+Advanced parameter mining terlengkap
+(URL, form, header, cookie, JSON, file upload)
+
+Smart reflection context detector (HTML/JS/URL/Attribute)
+
+Ultra-rich payload database 2000+ payload
+
+Payload mutation engine (context-aware + auto WAF bypass)
+
+DOM XSS Analyzer (full sink detection)
+
+Blind XSS Engine (callback + auto data exfil)
+
+CSP bypass payload set
+
+Mutation XSS detector
+
+Prototype pollution payload injector
+
+WAF detection (Cloudflare, AWS WAF, ModSecurity, F5, dll)
+
+Polyglot payload support
+
+No-WAF mode
+
+Automatic JSON report generator
+
+Multi-threaded executor (ThreadPoolExecutor)
+
+Real request execution (bukan simulasi)
+
+Platform detection (Termux, WSL, Kali, Linux, macOS)
+
+
 
 ---
 
-## **📦 Instalasi**
+📦 Instalasi
 
-```bash
-git clone https://github.com/O99099O/Poloss_Xss
+git clone https://github.com/O99099O/Poloss_Xss -b O99099O-Update-V3.2
 cd Poloss_Xss
 pip install -r requirements.txt
-```
+
+requirements.txt:
+
+requests
+beautifulsoup4
+colorama
+urllib3
+lxml
+
 
 ---
 
-## **🚀 Cara Menjalankan**
+🚀 Cara Menjalankan
 
-### **Scan Komprehensif**
+Scan Komprehensif
 
-```bash
-python3 xss_fuzzer_v2.py -u http://target.com
-```
+python3 "Xss_main V3.2.py" -u http://target.com
 
-### **DOM Mode**
+DOM Focus Mode
 
-```bash
-python3 xss_fuzzer_v2.py -u http://target.com -m dom
-```
+python3 "Xss_main V3.2.py" -u http://target.com --mode dom
 
-### **Fast Scan**
+Fast Scan (Cepat)
 
-```bash
-python3 xss_fuzzer_v2.py -u http://target.com -m fast
-```
+python3 "Xss_main V3.2.py" -u http://target.com --mode fast
 
-### **Blind XSS**
+Blind XSS Mode
 
-```bash
-python3 xss_fuzzer_v2.py -u http://target.com -m blind -c http://your-callback.net
-```
+python3 "Xss_main V3.2.py" -u http://target.com --blind-callback http://your-callback.net
 
-### **Custom Header**
+Skip WAF Detection
 
-```bash
-python3 xss_fuzzer_v2.py -u http://target.com -H "Cookie:abc,User-Agent:Poloss"
-```
+python3 "Xss_main V3.2.py" -u http://target.com --no-waf
 
----
+Custom Header
 
-## **📊 Output Laporan**
+python3 "Xss_main V3.2.py" -u http://target.com -H "Cookie:abc; User-Agent:Poloss"
 
-Hasil scan otomatis tersimpan sebagai:
+Custom Threads
 
-```
-xss_scan_XXXXXXXX.json
-```
+python3 "Xss_main V3.2.py" -u http://target.com --threads 20
 
-Isi:
-
-* Statistik
-* Parameter diuji
-* Payload terpicu
-* WAF detection
-* Vulnerability detail + exploit example
 
 ---
 
-## **🧠 Mode Scanning**
+📊 Output Laporan
 
-| Mode            | Deskripsi                     |
-| --------------- | ----------------------------- |
-| `fast`          | Fokus URL + form, cepat       |
-| `comprehensive` | Semua parameter, semua metode |
-| `dom`           | DOM XSS focus                 |
-| `blind`         | Blind callback XSS            |
+Setiap scan menghasilkan folder berisi:
 
----
+xss_scan_YYYYMMDD_HHMMSS.log
+xss_report_XXXXXXXX.json
 
-## **📡 Fitur Tambahan**
+Isi laporan:
 
-* Auto crawling internal link
-* Context-aware payload selection
-* Auto verification (anti false positive)
-* Realistic request injection
-* Multi-threaded payload executor
+Statistik scan
 
----
+Parameter ditemukan
 
-## **🔒 Catatan Legal**
+Payload yang dipicu
 
-Gunakan hanya untuk **pengujian legal / izin resmi**.
-Segala penyalahgunaan di luar tanggung jawab kamu sendiri.
+Bypass payload
 
----
+WAF detection
 
-## **🖋️ Watermark**
+DOM sink result
 
-**BY POLOSS**
+Blind XSS hit
+
+Exploit example lengkap
+
+
 
 ---
 
+🧠 Mode Scanning (V3.2)
+
+Mode	Deskripsi
+
+fast	Scan cepat (URL + form)
+dom	Fokus DOM & client-side sink
+blind	Blind XSS full callback
+comprehensive	Semua parameter + payload lengkap (default)
+
+
+
+---
+
+📡 Fitur Tambahan
+
+Auto crawling internal link
+
+Payload generator cerdas berbasis konteks
+
+Auto verification untuk menekan false positive
+
+Realistic request injection (tidak ada dummy/simulasi)
+
+Auto platform detection (Termux/WSL/Kali)
+
+
+
+---
+
+🔒 Catatan Legal
+
+Gunakan hanya untuk pengujian yang memiliki izin resmi.
+Segala penyalahgunaan berada di luar tanggung jawab pembuat.
+
+
+---
+
+🖋️ Watermark
+
+BY POLOSS
+
+
+---
